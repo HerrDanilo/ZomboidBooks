@@ -1,9 +1,16 @@
 body {
+    height: auto;
+    width: auto;
     text-align: left;
-    background-color: gray;
+    margin: 0px;
+    background-color: #808080;
+}
+h1 {
+    text-align: center;
 }
 .buttons {
-    padding: 10px 0;
+    text-align: center;
+    padding-bottom: 10px;
 }
 table {
     text-align: center;
@@ -18,9 +25,35 @@ td {
 .hasBook {
     background-color: green;
 }
+footer {
+    margin-top: 1em;
+    padding-top: 0.5em;
+    background-color: #404040;
+}
+footer .credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .credits p {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+footer .credits a {
+    width: 50px;
+    height: auto;
+}
+footer .credits img {
+    width: inherit;
+    height: inherit;
+}
 
-@media (min-width: 700px) {
+@media (min-width: 450px) {
     body {
         text-align: center;
+    }
+    .buttons {
+        padding-left: 0px;
     }
 }
