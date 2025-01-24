@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zomboid Books</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body onload="UpdateBooksTable()">
+    <h1>Project Zomboid Books Manager</h1>
+    <div class="buttons">
+        <button type="button" onclick="ResetBookStorage()">Reset book storage</button>
+    </div>
+    <table class="BooksTable">
+        <tr>
+            <th>Skill Name</th>
+            <th>Volume I</th>
+            <th>Volume II</th>
+            <th>Volume III</th>
+            <th>Volume IV</th>
+            <th>Volume V</th>
+        </tr>
+        <tr> <!-- Aiming -->
+            <td class="SkillName">Aiming</td>
+            <td><input type="checkbox" id="Aiming_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Aiming_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Aiming_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Aiming_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Aiming_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Reloading -->
+            <td class="SkillName">Reloading</td>
+            <td><input type="checkbox" id="Reloading_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Reloading_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Reloading_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Reloading_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Reloading_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Maintenance -->
+            <td class="SkillName">Maintenance</td>
+            <td><input type="checkbox" id="Maintenance_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Maintenance_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Maintenance_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Maintenance_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Maintenance_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Carpentry -->
+            <td class="SkillName">Carpentry</td>
+            <td><input type="checkbox" id="Carpentry_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carpentry_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carpentry_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carpentry_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carpentry_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Carving -->
+            <td class="SkillName">Carving</td>
+            <td><input type="checkbox" id="Carving_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carving_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carving_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carving_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Carving_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Cooking -->
+            <td class="SkillName">Cooking</td>
+            <td><input type="checkbox" id="Cooking_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Cooking_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Cooking_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Cooking_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Cooking_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Electrical -->
+            <td class="SkillName">Electrical</td>
+            <td><input type="checkbox" id="Electrical_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Electrical_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Electrical_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Electrical_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Electrical_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Glassmaking -->
+            <td class="SkillName">Glassmaking</td>
+            <td><input type="checkbox" id="Glassmaking_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Glassmaking_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Glassmaking_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Glassmaking_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Glassmaking_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Knapping -->
+            <td class="SkillName">Knapping</td>
+            <td><input type="checkbox" id="Knapping_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Knapping_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Knapping_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Knapping_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Knapping_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Masonry -->
+            <td class="SkillName">Masonry</td>
+            <td><input type="checkbox" id="Masonry_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Masonry_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Masonry_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Masonry_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Masonry_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Blacksmith -->
+            <td class="SkillName">Blacksmith</td>
+            <td><input type="checkbox" id="Blacksmith_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Blacksmith_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Blacksmith_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Blacksmith_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Blacksmith_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Mechanics -->
+            <td class="SkillName">Mechanics</td>
+            <td><input type="checkbox" id="Mechanics_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Mechanics_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Mechanics_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Mechanics_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Mechanics_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Pottery -->
+            <td class="SkillName">Pottery</td>
+            <td><input type="checkbox" id="Pottery_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Pottery_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Pottery_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Pottery_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Pottery_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Tailoring -->
+            <td class="SkillName">Tailoring</td>
+            <td><input type="checkbox" id="Tailoring_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tailoring_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tailoring_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tailoring_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tailoring_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Metalworking -->
+            <td class="SkillName">Metalworking</td>
+            <td><input type="checkbox" id="Metalworking_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Metalworking_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Metalworking_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Metalworking_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Metalworking_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Agriculture -->
+            <td class="SkillName">Agriculture</td>
+            <td><input type="checkbox" id="Agriculture_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Agriculture_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Agriculture_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Agriculture_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Agriculture_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Animal Care -->
+            <td class="SkillName">Animal Care</td>
+            <td><input type="checkbox" id="AnimalCare_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="AnimalCare_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="AnimalCare_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="AnimalCare_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="AnimalCare_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Butchering -->
+            <td class="SkillName">Butchering</td>
+            <td><input type="checkbox" id="Butchering_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Butchering_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Butchering_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Butchering_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Butchering_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- First Aid -->
+            <td class="SkillName">First Aid</td>
+            <td><input type="checkbox" id="FirstAid_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="FirstAid_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="FirstAid_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="FirstAid_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="FirstAid_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Fishing -->
+            <td class="SkillName">Fishing</td>
+            <td><input type="checkbox" id="Fishing_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Fishing_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Fishing_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Fishing_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Fishing_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Foraging -->
+            <td class="SkillName">Foraging</td>
+            <td><input type="checkbox" id="Foraging_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Foraging_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Foraging_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Foraging_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Foraging_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Tracking -->
+            <td class="SkillName">Tracking</td>
+            <td><input type="checkbox" id="Tracking_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tracking_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tracking_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tracking_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Tracking_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+        <tr> <!-- Hunting -->
+            <td class="SkillName">Hunting</td>
+            <td><input type="checkbox" id="Hunting_I" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Hunting_II" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Hunting_III" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Hunting_IV" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+            <td><input type="checkbox" id="Hunting_V" onchange="UpdateSkillBook(this.id, this.checked)"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

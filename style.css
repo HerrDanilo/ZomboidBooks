@@ -1,0 +1,26 @@
+body {
+    text-align: left;
+    background-color: gray;
+}
+.buttons {
+    padding: 10px 0;
+}
+table {
+    text-align: center;
+    margin: auto;
+}
+th,
+td {
+    padding: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.hasBook {
+    background-color: green;
+}
+
+@media (min-width: 700px) {
+    body {
+        text-align: center;
+    }
+}
